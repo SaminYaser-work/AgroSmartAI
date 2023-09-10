@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI, UploadFile
 from pydantic import BaseModel
 from fish_sugg.fish_sugg import predict_fish
@@ -29,3 +30,6 @@ async def fish(data: PondMetrics):
 async def dd(file: UploadFile):
     open('./temp/temp.jpg', 'wb').write(file.file.read())
     return predict_diseases('./temp/temp.jpg')
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
