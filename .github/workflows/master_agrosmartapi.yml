@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'agrosmartapi'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F56BCFE174794E5AAA145237C186C067 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EAE33E3DD209424195B072BEA6264AB9 }}
