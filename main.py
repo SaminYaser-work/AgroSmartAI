@@ -21,7 +21,7 @@ async def ping():
     return "Pong"
 
 
-@app.post("/fish/")
+@app.post("/fish")
 async def fish(data: PondMetrics):
     return predict_fish(data.metric)
 
@@ -32,4 +32,4 @@ async def dd(file: UploadFile):
     return predict_diseases('./temp/temp.jpg')
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=80, proxy_headers=True)
